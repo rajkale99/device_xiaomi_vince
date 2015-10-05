@@ -35,4 +35,10 @@
 
     <!-- After a CDMA conference call is merged, the swap button should be displayed. -->
     <bool name="support_swap_after_merge" translatable="false">false</bool>
+
+    <!-- Flag indicating if the phone is a world phone -->
+	<bool name="world_phone">false</bool>
+
+    <!-- Show enabled lte option for lte device -->
+    <bool name="config_enabled_lte" translatable="false">true</bool>
 </resources>
