@@ -19,6 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.buffer.size.kb=64 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
+    ro.af.client_heap_size_kbyte=7168 \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.offload.multiaac.enable=true \
     vendor.audio.offload.multiple.enabled=false \
