@@ -141,6 +141,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Filesystem
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
