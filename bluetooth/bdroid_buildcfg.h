@@ -16,7 +16,22 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME "Redmi 5 Plus"
+// Set bluetooth name dynamically 
+#include <cutils/properties.h>
+#include <string.h>
+static inline const char* BtmGetDefaultName()
+{
+    char product_model[PROPERTY_VALUE_MAX];
+    property_get("ro.product.model", product_model, "");
+    if (strstr(product_model, "Redmi 5 Plus"))
+        return "Redmi 5 Plus";
+    if (strstr(product_model, "Redmi Note 5"))
+        return "Redmi Note 5";
+    // Fallback to ro.product.model
+    return "";
+}
+#undef PROPERTY_VALUE_MAX
+#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 // Disables read remote device feature
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
 #define MAX_ACL_CONNECTIONS    7
