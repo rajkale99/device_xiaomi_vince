@@ -563,7 +563,11 @@ vendor/etc/qdcm_calib_data_td4310_ebbg_fhdplus_e7_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_td4310_fhdplus_e7_g55_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_td4310_fhdplus_e7_video_mode_dsi_panel.xml
 
+# Fingerprint firmware
+etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
+
 # Fingerprint - from vince
+lib64/libsoftkeymaster.so:vendor/lib64/libsoftkeymaster.so
 lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.default.so
 vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.default.so
 lib64/libgoodixfingerprintd_binder.so:vendor/lib64/libgoodixfingerprintd_binder.so
@@ -575,5 +579,8 @@ lib64/android.hardware.biometrics.fingerprint@2.1.so:vendor/lib64/android.hardwa
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|27f43f1e5531e9401eeac271f1554b2e00abddd1
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+
+# Novatek ts firmware
+etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
