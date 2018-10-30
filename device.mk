@@ -51,6 +51,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.vince.rc \
     init.goodix.sh
+    init.zuc.rc
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/vince
