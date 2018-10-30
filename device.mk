@@ -50,8 +50,10 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.vince.rc \
-    init.goodix.sh
-    init.zuc.rc
+    init.goodix.sh \
+    init.zuc.rc \
+    init.spectrum.rc \
+    init.spectrum.sh
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/vince
