@@ -8,6 +8,13 @@ vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
+# Audio (HACK NEEDED)
+vendor/lib/hw/audio.primary.msm8953.so|c9758084c22c7b082c3352d5543a3d11e166a937
+vendor/lib64/hw/audio.primary.msm8953.so|db36fabfc460d67231b4dcc79cf04da04a83982a
+vendor/lib/libtinyalsa.so|14e82cf7c89407de4ff1b6fde24aa6a9b9533c0e
+vendor/lib/libtinycompress.so|16c16c11c53be601b9f02f0e217faf9ff739bdd9
+vendor/lib/libtinyxml.so|c37f500d63590e0157363116ab5d4d0c3988cf16
+
 # Audio firmware - from vince
 etc/firmware/tas2557_uCDSP.bin:vendor/firmware/tas2557_uCDSP.bin
 
@@ -588,4 +595,4 @@ vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # Novatek ts firmware
-etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
+etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin 
