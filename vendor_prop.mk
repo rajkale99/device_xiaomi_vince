@@ -92,6 +92,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.qfp=false
 
+# Force disable blank
+debug.force_no_blanking=true
+
 # Fm
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fm.transmitter=false
