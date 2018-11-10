@@ -20,6 +20,7 @@ vendor/lib/libskia.so|89ff4c400c140fe8418a51b9802cb41b3a61ee94
 vendor/lib/libicuuc-v27.so|3f0149a03eb65921589bb8d96441aedb7477db75
 vendor/lib/libminikin-v27.so|a35c0b1b3471694009511fdf8dfbb14d7988f62c
 vendor/lib/libMiWatermark.so|14e7fbbd029f9a2c012db1323fdb8444d8836467
+vendor/lib/libvidhance_gyro.so|b5e3fd3ce40e3c2ea2a225fe05704052474b9ddd
 
 # Camera XML Configs - from vince
 vendor/etc/camera/camera_config.xml
@@ -30,6 +31,7 @@ vendor/etc/camera/vince_ov12a10_sunny_chromatix_india.xml
 vendor/etc/camera/vince_ov5675_ofilm_chromatix.xml
 vendor/etc/camera/vince_ov5675_ofilm_chromatix_india.xml
 vendor/etc/camera/vince_ov5675_qtech_chromatix.xml
+vendor/etc/camera/vince_ov5675_qtech_chromatix_india.xml
 
 # QCOM Camera Daemon - from vince
 vendor/bin/mm-qcamera-daemon
