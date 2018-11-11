@@ -24,6 +24,8 @@ vendor/lib/libvidhance_gyro.so|b5e3fd3ce40e3c2ea2a225fe05704052474b9ddd
 
 # Camera XML Configs - from vince
 vendor/etc/camera/camera_config.xml
+vendor/etc/camera/csidtg_camera.xml
+vendor/etc/camera/csidtg_chromatix.xml
 vendor/etc/camera/vince_imx486_ofilm_chromatix.xml
 vendor/etc/camera/vince_imx486_ofilm_chromatix_india.xml
 vendor/etc/camera/vince_ov12a10_sunny_chromatix.xml
@@ -37,6 +39,7 @@ vendor/etc/camera/vince_ov5675_qtech_chromatix_india.xml
 vendor/bin/mm-qcamera-daemon
 
 # QCOM Camera Libraries - from vince
+vendor/etc/init/android.hardware.camera.provider@2.4-service.rc
 vendor/lib/hw/camera.msm8953.so
 lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 vendor/lib/libarcsoft_beautyshot.so
@@ -89,7 +92,9 @@ vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera_cac3_lib.so
 vendor/lib/libmmcamera_chromaflash_lib.so
+vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_dbg.so
+vendor/lib/libmmcamera_dummyalgo.so
 vendor/lib/libmmcamera_dcrf_lib.so
 vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
