@@ -49,15 +49,33 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.display.lmax=1280x720 \
     camera.display.umax=1920x1080 \
-    camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
     camera.lowpower.record.enable=1 \
     media.camera.ts.monotonic=1 \
     persist.camera.gyro.disable=0 \
     persist.camera.isp.clock.optmz=0 \
     persist.camera.stats.test=5 \
-    persist.camera.HAL3.enabled=1 \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     vidc.enc.dcvs.extra-buff-count=2
+
+#Expose aux camera for below packages
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.instagram.android,com.whatsapp,com.snapchat.android \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.instagram.com,com.whatsapp,com.snapchat.android
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1 \
+    camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
+
+#disable UBWC for camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.preview.ubwc=0 \
+    persist.camera.stats.test=0 \
+    persist.camera.depth.focus.cb=0 \
+    persist.camera.isp.clock.optmz=0 \
+    persist.camera.hist.high=20 \
+    persist.camera.hist.drc=1.2 \
+    persist.camera.linkpreview=0 \
+    persist.camera.isp.turbo=1
 
 # Cne/Dpm
 PRODUCT_PROPERTY_OVERRIDES += \
