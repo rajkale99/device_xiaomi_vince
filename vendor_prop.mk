@@ -57,16 +57,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
-#Expose aux camera for below packages
+# Expose aux camera for below packages
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.instagram.android,com.whatsapp,com.snapchat.android \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.instagram.com,com.whatsapp,com.snapchat.android
+    camera.aux.packagelist=com.instagram.android,com.whatsapp,com.snapchat.android \
+    camera.aux.packagelist2=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi
+    vendor.camera.aux.packagelist=com.instagram.com,com.whatsapp,com.snapchat.android \
+    vendor.camera.aux.packagelist2=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
-    camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
+    camera.hal1.packagelist=com.instagram.android,com.snapchat.android \
+    camera.hal1.packagelist2=com.skype.raider,com.google.android.talk,com.whatsapp,com.facebook.katana
 
-#disable UBWC for camera
+# Disable UBWC for camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.preview.ubwc=0 \
     persist.camera.stats.test=0 \
