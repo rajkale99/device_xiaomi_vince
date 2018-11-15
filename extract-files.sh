@@ -18,6 +18,9 @@
 
 set -e
 
+DEVICE=vince
+VENDOR=xiaomi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -31,18 +34,19 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
+# default to not sanitizing the vendor folder before extraction
+clean_vendor=false
 
 while [ "$1" != "" ]; do
     case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
+        -p | --path )           shift
+                                SRC=$1
                                 ;;
         -s | --section )        shift
                                 SECTION=$1
-                                CLEAN_VENDOR=false
+                                clean_vendor=false
                                 ;;
-        * )                     SRC=$1
+        -c | --clean-vendor )   clean_vendor=true
                                 ;;
     esac
     shift
@@ -53,42 +57,18 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false $clean_vendor
 
+extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 
-if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
-    # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
-
-    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
-fi
-
-COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-if [ "$DEVICE" = "mido" ]; then
-    # Hax for cam configs
-    sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" $COMMON_BLOB_ROOT/vendor/lib/libmmcamera2_sensor_modules.so
-
-fi
-
-if [ "$DEVICE" = "tissot" ]; then
-    # Hax for oreo cam hal
+# Hax for oreo cam hal
     patchelf --replace-needed libicuuc.so libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
     patchelf --replace-needed libminikin.so libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
     patchelf --replace-needed libskia.so libskia-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
     patchelf --set-soname libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libicuuc-v27.so
     patchelf --set-soname libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libminikin-v27.so
-fi
-
-if [ "$DEVICE" = "vince" ]; then
-    # Hax for oreo cam hal
-    patchelf --replace-needed libicuuc.so libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --replace-needed libminikin.so libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --replace-needed libskia.so libskia-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
-    patchelf --set-soname libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libicuuc-v27.so
-    patchelf --set-soname libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libminikin-v27.so
-fi
 
 "$MY_DIR"/setup-makefiles.sh
