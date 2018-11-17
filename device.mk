@@ -172,7 +172,9 @@ PRODUCT_PACKAGES += \
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
-    libfmjni
+    libfmjni \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
