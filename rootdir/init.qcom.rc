@@ -160,7 +160,7 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # White flashlight
-    write /sys/devices/soc/qpnp-flash-led-26/leds/led:torch_1/max_brightness 0
+    write /sys/devices/soc/qpnp-flash-led-24/leds/led:torch_1/max_brightness 0
 
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
