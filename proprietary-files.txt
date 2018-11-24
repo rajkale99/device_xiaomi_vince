@@ -554,6 +554,9 @@ vendor/lib/libchromatix_vince_india_ov5675_qtech_zsl_video_3a.so
 vendor/lib/libmmcamera_vince_ov5675_qtech.so
 vendor/lib/libmmcamera_vince_ov5675_qtech_eeprom.so
 
+# Camera OIS
+vendor/lib/libois_lc898122.so
+
 # Camera HIDL - from vince (HACK NEEDED)
 vendor/bin/hw/android.hardware.camera.provider@2.4-service
 vendor/lib/camera.device@1.0-impl.so
