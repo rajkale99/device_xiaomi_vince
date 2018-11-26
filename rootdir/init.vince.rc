@@ -26,3 +26,7 @@
 #
 
 on boot
+    # White flashlight
+    write /sys/devices/soc/qpnp-flash-led-24/leds/led:torch_1/max_brightness 0
+
+
