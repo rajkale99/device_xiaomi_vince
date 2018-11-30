@@ -47,8 +47,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.display.lmax=1280x720 \
-    camera.display.umax=1920x1080 \
+    persist.vendor.camera.display.umax=1920x1080 \
+    persist.vendor.camera.display.lmax=1280x720 \
     camera.lowpower.record.enable=1 \
     media.camera.ts.monotonic=1 \
     persist.camera.gyro.disable=0 \
