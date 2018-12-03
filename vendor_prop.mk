@@ -65,7 +65,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist2=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1 \
     camera.hal1.packagelist=com.instagram.android,com.snapchat.android \
     camera.hal1.packagelist2=com.skype.raider,com.google.android.talk,com.whatsapp,com.facebook.katana
 
