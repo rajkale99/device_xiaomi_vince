@@ -164,6 +164,11 @@ vendor/lib/libactuator_vince_dw9714v_ofilm.so
 vendor/lib/libactuator_vince_dw9763_sunny.so
 
 # Camera Chromatix - from vince
+vendor/lib/libchromatix_csidtg_common.so
+vendor/lib/libchromatix_csidtg_cpp_preview.so
+vendor/lib/libchromatix_csidtg_postproc.so
+vendor/lib/libchromatix_csidtg_preview.so
+vendor/lib/libchromatix_csidtg_zsl_preview.so
 vendor/lib/libchromatix_ov12a10_sunny_vince_4k_preview_dw9763.so
 vendor/lib/libchromatix_ov12a10_sunny_vince_4k_video_dw9763.so
 vendor/lib/libchromatix_ov12a10_sunny_vince_common.so
