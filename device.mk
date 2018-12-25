@@ -25,7 +25,6 @@ $(call inherit-product, vendor/xiaomi/vince/vince-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -173,11 +172,7 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
     libebtc
-
-# XiaomiParts mode
-PRODUCT_PACKAGES += \
-    XiaomiParts
-	
+    
 # Doze mode
 PRODUCT_PACKAGES += \
     XiaomiDoze
