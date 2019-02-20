@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
-# Inherit some common Legion stuff.
+# Inherit some common LegionOS stuff.
 $(call inherit-product, vendor/legion/config/common.mk)
 $(call inherit-product, vendor/MiuiCamera/config.mk)
 
