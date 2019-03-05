@@ -17,17 +17,17 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/vince.mk)
+$(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
 
 # Inherit from vince device
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
-# Inherit some common XenonHD stuff.
-$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
+# Inherit some common Legion stuff.
+$(call inherit-product, vendor/legion/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
-PRODUCT_NAME := xenonhd_vince
+PRODUCT_NAME := legion_vince
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5 Plus
 PRODUCT_MANUFACTURER := Xiaomi
